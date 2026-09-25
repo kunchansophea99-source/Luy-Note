@@ -1,0 +1,480 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 24px;
+    background-color: #f7f7f7;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: white;
+    padding: 16px;
+    margin-bottom: 8px;
+    border-radius: 12px;
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    margin-top: 20px;
+    border-radius: 12px;
+    font-size: 16px;
+}
+.hidden {
+    display: none;
+}
+
+#month-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+#month-navigation p {
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+    flex: 1;
+}
+
+#month-navigation button {
+    width: 48px;
+    height: 44px;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+}
+
+#expense-form {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 16px;
+}
+
+#expense-form label {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+#expense-form input,
+#expense-form select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px;
+    font-size: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+}
+
+#save-expense-button {
+    margin-top: 20px;
+}
+
+#expense-history > div {
+    background-color: white;
+    padding: 16px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    line-height: 1.5;
+}
+
+#expense-history button {
+    width: auto;
+    padding: 8px 12px;
+    margin-top: 10px;
+    margin-right: 6px;
+    font-size: 14px;
+}
+
+/* =================================
+   LUY NOTE — VISUAL IDENTITY
+   Warm • Cozy • Personal
+   ================================= */
+
+:root {
+    --cream: #F7F1E7;
+    --cream-light: #FFFDF8;
+
+    --green: #496B50;
+    --green-dark: #304A37;
+    --sage: #DDE7D8;
+
+    --brown: #594A3C;
+    --brown-light: #8A7765;
+
+    --border: #E7DED1;
+}
+
+
+/* Main page */
+
+body {
+    background-color: var(--cream);
+    color: var(--brown);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+
+/* Luy Note title */
+
+h1 {
+    color: var(--green-dark);
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 18px;
+}
+
+
+/* Main Add Expense button */
+
+#add-expense-button {
+    background-color: var(--green);
+    color: white;
+
+    border: none;
+    border-radius: 16px;
+
+    font-weight: 700;
+    font-size: 17px;
+
+    box-shadow: 0 4px 10px rgba(48, 74, 55, 0.12);
+}
+
+
+/* Month navigation */
+
+#month-navigation {
+    margin-top: 22px;
+    margin-bottom: 8px;
+}
+
+#month-navigation p {
+    color: var(--brown);
+    font-size: 17px;
+}
+
+#month-navigation button {
+    background-color: var(--cream-light);
+    color: var(--green-dark);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+
+/* Section headings */
+
+h2 {
+    color: var(--green-dark);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+/* Main cards */
+
+li {
+    background-color: var(--cream-light);
+    border: 1px solid var(--border);
+
+    box-shadow: 0 2px 6px rgba(89, 74, 60, 0.05);
+}
+
+/* Monthly spending hero */
+
+#monthly-summary {
+    margin-top: 28px;
+    margin-bottom: 20px;
+    padding: 22px;
+
+    background-color: var(--sage);
+    border-radius: 20px;
+}
+
+#spent-label {
+    margin: 0 0 6px 0;
+
+    color: var(--green-dark);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+#monthly-total {
+    margin: 0;
+
+    color: var(--green-dark);
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+/* Weekly spending */
+
+#weekly-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+#weekly-list .week-row {
+    margin: 0;
+    padding: 16px;
+
+    min-height: 52px;
+
+    display: flex;
+    align-items: center;
+
+    background-color: var(--cream-light);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    color: var(--brown);
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+#weekly-list .week-row:active {
+    transform: scale(0.98);
+}
+
+/* Let Week 5 use the full row */
+
+#weekly-list .week-row:last-child {
+    grid-column: 1 / -1;
+}
+
+#weekly-list .week-row {
+    justify-content: space-between;
+}
+
+.week-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.week-info strong {
+    color: var(--green-dark);
+    font-size: 15px;
+}
+
+.week-info small {
+    color: var(--brown-light);
+    font-size: 12px;
+}
+
+/* =========================
+   RECENT EXPENSES
+   ========================= */
+
+#expense-history {
+    margin-top: 12px;
+}
+
+#expense-history > div {
+    background-color: var(--cream-light);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    padding: 16px;
+    margin-bottom: 12px;
+
+    color: var(--brown);
+    line-height: 1.6;
+
+    box-shadow: 0 2px 6px rgba(89, 74, 60, 0.05);
+}
+
+
+/* Category name */
+
+#expense-history > div strong {
+    color: var(--green-dark);
+    font-size: 16px;
+}
+
+
+/* Edit + Delete buttons */
+
+#expense-history button {
+    width: auto;
+
+    padding: 8px 13px;
+    margin-top: 12px;
+    margin-right: 6px;
+
+    background-color: var(--sage);
+    color: var(--green-dark);
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* Small tap effect */
+
+#expense-history button:active {
+    transform: scale(0.96);
+}
+
+/* =========================
+   ADD EXPENSE FORM
+   ========================= */
+
+#expense-form {
+    margin-top: 16px;
+    padding: 20px;
+
+    background-color: var(--cream-light);
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    box-shadow: 0 4px 12px rgba(89, 74, 60, 0.06);
+}
+
+
+/* Form title */
+
+#expense-form h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+
+    color: var(--green-dark);
+    font-size: 20px;
+}
+
+
+/* Labels */
+
+#expense-form label {
+    color: var(--brown);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* Amount, category, note and date */
+
+#expense-form input,
+#expense-form select {
+    background-color: #FFFFFF;
+    color: var(--brown);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    padding: 14px;
+}
+
+
+/* Make the amount feel more important */
+
+#amount {
+    font-size: 22px !important;
+    font-weight: 700;
+}
+
+
+/* Highlight the field currently being used */
+
+#expense-form input:focus,
+#expense-form select:focus {
+    outline: 2px solid var(--sage);
+    border-color: var(--green);
+}
+
+
+/* Save / Update button */
+
+#save-expense-button {
+    background-color: var(--green);
+    color: white;
+
+    border: none;
+    border-radius: 14px;
+
+    font-weight: 700;
+}
+
+
+/* Tap feedback */
+
+#save-expense-button:active,
+#add-expense-button:active {
+    transform: scale(0.98);
+}
+
+/* =========================
+   LITTLE LUY NOTE MOMENT 🌱
+   ========================= */
+
+#save-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+
+    width: max-content;
+    max-width: 80%;
+
+    padding: 14px 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background-color: var(--green-dark);
+    color: var(--cream-light);
+
+    border-radius: 18px;
+
+    box-shadow: 0 6px 20px rgba(48, 74, 55, 0.18);
+
+    z-index: 1000;
+}
+
+#save-toast.hidden {
+    display: none;
+}
+
+#save-toast strong {
+    font-size: 14px;
+}
+
+#save-toast small {
+    opacity: 0.8;
+    font-size: 12px;
+}
+
+#toast-plant {
+    font-size: 22px;
+}

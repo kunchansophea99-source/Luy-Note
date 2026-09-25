@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+   <title>Luy Note</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Luy Note</h1>
+    <button id="add-expense-button">+ Add Expense</button>
+    <div id="month-navigation">
+    <button id="previous-month-button">←</button>
+
+    <p id="month-title">September 2026</p>
+
+    <button id="next-month-button">→</button>
+    </div>
+
+    <div id="monthly-summary">
+    <p id="spent-label">SPENT THIS MONTH</p>
+    <p id="monthly-total">$<span id="total-amount">0.00</span></p>
+    </div>
+
+
+    <ul id="category-list">
+        <li class="category-row food">
+            <span><span class="category-icon">🍜</span> Food</span>
+            <strong>$<span id="food-total">0.00</span></strong>
+        </li>
+
+        <li class="category-row drinks">
+            <span><span class="category-icon">🧋</span> Drinks</span>
+            <strong>$<span id="drinks-total">0.00</span></strong>
+        </li>
+
+        <li class="category-row transport">
+            <span><span class="category-icon">🛵</span> Transport</span>
+            <strong>$<span id="transport-total">0.00</span></strong>
+        </li>
+
+        <li class="category-row shopping">
+            <span><span class="category-icon">🛍️</span> Shopping</span>
+            <strong>$<span id="shopping-total">0.00</span></strong>
+        </li>
+
+        <li class="category-row bills">
+            <span><span class="category-icon">🧾</span> Bills</span>
+            <strong>$<span id="bills-total">0.00</span></strong>
+        </li>
+
+        <li class="category-row health">
+            <span><span class="category-icon">🌿</span> Health</span>
+            <strong>$<span id="health-total">0.00</span></strong>
+        </li>
+
+        <li class="category-row learning">
+            <span><span class="category-icon">📚</span> Learning</span>
+            <strong>$<span id="learning-total">0.00</span></strong>
+        </li>
+
+        <li class="category-row other">
+            <span><span class="category-icon">✨</span> Other</span>
+            <strong>$<span id="other-total">0.00</span></strong>
+        </li>
+    </ul>
+
+        <h2>Weekly Spending</h2>
+
+        <ul id="weekly-list">
+            
+        <li class="week-row" data-week="1">
+            <span class="week-info">
+                <strong>Week 1</strong>
+                
+                <small>1–7</small>
+            </span>
+            <strong>$<span id="week-1-total">0.00</span></strong>
+        </li>
+
+        <li class="week-row" data-week="2">
+            <span class="week-info">
+                <strong>Week 2</strong>
+                <small>8–14</small>
+            </span>
+            <strong>$<span id="week-2-total">0.00</span></strong>
+        </li>
+
+        <li class="week-row" data-week="3">
+            <span class="week-info">
+                <strong>Week 3</strong>
+                <small>15–21</small>
+            </span>
+            <strong>$<span id="week-3-total">0.00</span></strong>
+        </li>
+
+        <li class="week-row" data-week="4">
+            <span class="week-info">
+                <strong>Week 4</strong>
+                <small>22–28</small>
+            </span>
+            <strong>$<span id="week-4-total">0.00</span></strong>
+        </li>
+
+        <li class="week-row" data-week="5">
+            <span class="week-info">
+                <strong>Week 5</strong>
+                <small id="week-5-label">29–30</small>
+            </span>
+            <strong>$<span id="week-5-total">0.00</span></strong>
+        </li>
+        </ul>
+
+        <div id="week-detail" class="hidden">
+
+        <h2 id="week-detail-title">Week Detail</h2>
+
+        <h3>Total: $<span id="week-detail-total">0.00</span></h3>
+
+        <ul>
+            <li>Food - $<span id="week-food-total">0.00</span></li>
+            <li>Drinks - $<span id="week-drinks-total">0.00</span></li>
+            <li>Transport - $<span id="week-transport-total">0.00</span></li>
+            <li>Shopping - $<span id="week-shopping-total">0.00</span></li>
+            <li>Bills - $<span id="week-bills-total">0.00</span></li>
+            <li>Health - $<span id="week-health-total">0.00</span></li>
+            <li>Learning - $<span id="week-learning-total">0.00</span></li>
+            <li>Other - $<span id="week-other-total">0.00</span></li>
+        </ul>
+
+</div>
+    <h2>Recent Expenses</h2>
+
+    <div id="expense-history">
+    </div>
+
+   <div id="expense-form" class="hidden">
+
+        <h2>Add Expense</h2>
+
+        <label>Amount</label>
+        <input type="number" id="amount" placeholder="0.00">
+
+        <label>Category</label>
+        <select id="category">
+            <option>Food</option>
+            <option>Drinks</option>
+            <option>Transport</option>
+            <option>Shopping</option>
+            <option>Bills</option>
+            <option>Health</option>
+            <option>Learning</option>
+            <option>Other</option>
+        </select>
+
+        <label>Note</label>
+        <input type="text" id="note" placeholder="Optional">
+
+        <label>Date</label>
+        <input type="date" id="date">
+
+        <button id="save-expense-button">Save Expense</button>
+
+    </div>
+
+    <div id="save-toast" class="hidden">
+    <span id="toast-plant">🌱</span>
+    <strong>Expense noted!</strong>
+    <small>Little by little.</small>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
