@@ -708,8 +708,8 @@ li {
     right: 14px;
     bottom: 90px;
 
-    width: 56px;
-    height: 56px;
+    width: 64px;
+    height: 64px;
 
     margin: 0;
     padding: 0;
@@ -724,8 +724,10 @@ li {
     box-shadow: 0 4px 14px rgba(48, 74, 55, 0.15);
 
     z-index: 800;
-
     animation: tree-float 3s ease-in-out infinite;
+
+    touch-action: none;
+    cursor: grab;
 }
 
 /* =========================
