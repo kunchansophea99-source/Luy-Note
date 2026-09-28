@@ -478,3 +478,357 @@ li {
 #toast-plant {
     font-size: 22px;
 }
+
+/* =========================
+   COMPACT MOBILE FORM
+   ========================= */
+
+#expense-form {
+    padding: 16px 18px;
+}
+
+#expense-form h2 {
+    margin-bottom: 10px;
+}
+
+/* Reduce space between label and next field */
+
+#expense-form label {
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+/* Keep fields comfortable to tap, but less tall */
+
+#expense-form input,
+#expense-form select {
+    padding: 11px 12px;
+    min-height: 44px;
+}
+
+/* Amount remains visually important */
+
+#amount {
+    font-size: 20px !important;
+}
+
+/* Compact Save button */
+
+#save-expense-button {
+    margin-top: 14px;
+    padding: 13px;
+}
+
+/* =========================
+   EXPORT
+   ========================= */
+
+#export-button {
+    margin-top: 8px;
+
+    background-color: transparent;
+    color: var(--green-dark);
+
+    border: 1px solid var(--green);
+    border-radius: 14px;
+
+    font-weight: 700;
+}
+
+/* =========================
+   SPENDING VISUAL
+   ========================= */
+
+#spending-visual {
+    margin-top: 28px;
+}
+
+#spending-bars {
+    background-color: var(--cream-light);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 16px;
+}
+
+.spending-bar-row {
+    margin-bottom: 16px;
+}
+
+.spending-bar-row:last-child {
+    margin-bottom: 0;
+}
+
+.spending-bar-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7px;
+    font-size: 14px;
+}
+
+.spending-bar-info span {
+    color: var(--brown);
+    font-weight: 600;
+}
+
+.spending-bar-info strong {
+    color: var(--green-dark);
+}
+
+.spending-bar-track {
+    width: 100%;
+    height: 9px;
+    background-color: var(--cream);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.spending-bar-fill {
+    height: 100%;
+    border-radius: 20px;
+    background-color: var(--green);
+}
+
+/* Same category colours as the main cards */
+
+.spending-bar-fill.food { background-color: #D98C6A; }
+.spending-bar-fill.drinks { background-color: #D9A0A7; }
+.spending-bar-fill.transport { background-color: #86A8B5; }
+.spending-bar-fill.shopping { background-color: #AA9CC5; }
+.spending-bar-fill.bills { background-color: #D3AC62; }
+.spending-bar-fill.health { background-color: #7FA083; }
+.spending-bar-fill.learning { background-color: #6F9D96; }
+.spending-bar-fill.other { background-color: #B5A89A; }
+
+#category-list {
+    display: none;
+}
+
+/* =========================
+   WEEKLY REPORT POPUP
+   ========================= */
+
+#week-detail-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(48, 74, 55, 0.28);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+    box-sizing: border-box;
+
+    z-index: 900;
+}
+
+#week-detail-overlay.hidden {
+    display: none;
+}
+
+#week-detail {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    max-height: 75vh;
+    overflow-y: auto;
+
+    background-color: var(--cream-light);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+
+    padding: 22px;
+    box-sizing: border-box;
+
+    box-shadow: 0 12px 35px rgba(48, 74, 55, 0.18);
+}
+
+/* Close button */
+
+#close-week-detail {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: var(--sage);
+    color: var(--green-dark);
+
+    font-size: 22px;
+    line-height: 1;
+}
+
+/* Popup heading */
+
+#week-detail h2 {
+    margin: 0 45px 8px 0;
+}
+
+#week-detail h3 {
+    margin: 0 0 18px 0;
+    color: var(--green-dark);
+    font-size: 26px;
+}
+
+/* Category rows */
+
+#week-detail ul {
+    margin-bottom: 0;
+}
+
+#week-detail li {
+    box-shadow: none;
+    padding: 12px 0;
+    margin: 0;
+
+    border: none;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+}
+
+#week-detail li:last-child {
+    border-bottom: none;
+}
+
+/* =========================
+   FLOATING TREE COMPANION
+   ========================= */
+
+#tree-companion {
+    position: fixed;
+
+    right: 14px;
+    bottom: 90px;
+
+    width: 56px;
+    height: 56px;
+
+    margin: 0;
+    padding: 0;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    background-color: var(--cream-light);
+
+    font-size: 28px;
+
+    box-shadow: 0 4px 14px rgba(48, 74, 55, 0.15);
+
+    z-index: 800;
+
+    animation: tree-float 3s ease-in-out infinite;
+}
+
+/* =========================
+   TREE COMPANION POPUP
+   ========================= */
+
+#tree-popup-overlay {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+    box-sizing: border-box;
+
+    background-color: rgba(48, 74, 55, 0.28);
+
+    z-index: 950;
+}
+
+#tree-popup-overlay.hidden {
+    display: none;
+}
+
+#tree-popup {
+    position: relative;
+
+    width: 100%;
+    max-width: 330px;
+
+    padding: 26px 22px 22px;
+    box-sizing: border-box;
+
+    text-align: center;
+
+    background-color: var(--cream-light);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+
+    box-shadow: 0 12px 35px rgba(48, 74, 55, 0.18);
+}
+
+#close-tree-popup {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    width: 36px;
+    height: 36px;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: var(--sage);
+    color: var(--green-dark);
+
+    font-size: 22px;
+}
+
+#tree-character {
+    margin-top: 10px;
+    font-size: 54px;
+}
+
+#tree-popup h2 {
+    margin: 10px 0 6px;
+}
+
+#tree-message {
+    margin: 0 auto 18px;
+
+    max-width: 240px;
+
+    color: var(--brown-light);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+#check-in-button {
+    margin: 0;
+
+    background-color: var(--green);
+    color: white;
+
+    border: none;
+    border-radius: 14px;
+
+    font-weight: 700;
+}
+
+@keyframes tree-float {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+}

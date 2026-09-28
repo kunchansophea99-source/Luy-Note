@@ -6,11 +6,11 @@
    <title>Luy Note</title>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="style.css">
+   <link rel="manifest" href="manifest.json">
+   <link rel="apple-touch-icon" href="icon-512.png">
 </head>
 
-<body>
-
-    <h1>Luy Note</h1>
+<h1>Luy Note</h1>
     <button id="add-expense-button">+ Add Expense</button>
     <div id="month-navigation">
     <button id="previous-month-button">←</button>
@@ -66,9 +66,14 @@
             <span><span class="category-icon">✨</span> Other</span>
             <strong>$<span id="other-total">0.00</span></strong>
         </li>
-    </ul>
+        </ul>
 
-        <h2>Weekly Spending</h2>
+        <div id="spending-visual">
+        <h2>Where My Money Went</h2>
+        <div id="spending-bars"></div>
+        </div>
+
+    <h2>Weekly Spending</h2>
 
         <ul id="weekly-list">
             
@@ -114,7 +119,11 @@
         </li>
         </ul>
 
-        <div id="week-detail" class="hidden">
+   <div id="week-detail-overlay" class="hidden">
+
+    <div id="week-detail">
+
+        <button id="close-week-detail" aria-label="Close">×</button>
 
         <h2 id="week-detail-title">Week Detail</h2>
 
@@ -131,11 +140,15 @@
             <li>Other - $<span id="week-other-total">0.00</span></li>
         </ul>
 
-</div>
-    <h2>Recent Expenses</h2>
-
-    <div id="expense-history">
     </div>
+
+    </div>
+
+<h2>Recent Expenses</h2>
+    
+    <div id="expense-history"></div>
+    
+    <button id="export-button">↓ Export Expenses</button>
 
    <div id="expense-form" class="hidden">
 
@@ -171,7 +184,46 @@
     <strong>Expense noted!</strong>
     <small>Little by little.</small>
     </div>
-    
+
+    <!-- Floating tree companion -->
+    <button id="tree-companion" aria-label="Open my tree">
+    🌱
+    </button>
+
+    <div id="tree-popup-overlay" class="hidden">
+        <div id="tree-popup">
+
+        <button id="close-tree-popup" aria-label="Close">×</button>
+
+        <div id="tree-character">🌱</div>
+
+        <p id="tree-stage">Seedling</p>
+
+        <h2>My Little Tree</h2>
+
+        <p id="tree-message">
+            Check in with your spending and help me grow.
+        </p>
+
+        <div id="tree-progress">
+
+        <p>
+            🌱 <strong id="growing-days-text">0 Growing Days</strong>
+        </p>
+
+        <p>
+            🌳 <strong id="days-together-text">0 Days Together</strong>
+        </p>
+
+        </div>
+
+        <button id="check-in-button">
+            Check in today ✓
+        </button>
+
+    </div>
+
+</div>
     <script src="app.js"></script>
 </body>
 </html>
