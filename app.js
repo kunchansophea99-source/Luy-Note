@@ -6,7 +6,7 @@ const amountInput = document.getElementById("amount");
 const categoryInput = document.getElementById("category");
 const noteInput = document.getElementById("note");
 const dateInput = document.getElementById("date");
-    const today = new Date().toISOString().split("T")[0];
+    const today = new Date().toLocaleDateString("en-CA");
     dateInput.value = today;
 
     const currentDate = new Date();
@@ -147,9 +147,10 @@ function updateTotals() {
             categoryTotals[expense.category] =
                 categoryTotals[expense.category] + expense.amount;
         }
-     updateSpendingVisual(categoryTotals, total);
     }
 });
+
+updateSpendingVisual(categoryTotals, total);
 
     document.getElementById("total-amount").textContent = total.toFixed(2);
 
